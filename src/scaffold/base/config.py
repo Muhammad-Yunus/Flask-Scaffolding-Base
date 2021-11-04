@@ -1,4 +1,4 @@
-DEBUG = False
+DEBUG = True
 
 # Create Secutiry Config (ext.)
 

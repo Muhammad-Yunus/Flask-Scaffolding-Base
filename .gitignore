@@ -1,3 +1,5 @@
 *.pyc
 *.db
 *.sqlite
+dist/*
+*/flask_scaffolding.egg-info/*

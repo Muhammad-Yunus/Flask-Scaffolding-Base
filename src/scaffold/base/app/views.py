@@ -40,8 +40,10 @@ def about():
 @login_required
 def user(id):
     user = User.query.get(id)
+    role_options = [(row.id, row.name) for row in Role.query.all()]
     if request.method == 'POST' :
         form = UserForm(request.form)
+        form.role.choices = role_options
         if form.validate_on_submit() :
             user = User() if user is None else user
             user.name = form.name.data
@@ -58,6 +60,7 @@ def user(id):
             return render_template("user.html", form=form)
     else:
         form = UserForm(obj=user)
+        form.role.choices = role_options
         if user is not None :
             form.role.data = [role.id for role in user.roles]
         return render_template("user.html", form=form)
