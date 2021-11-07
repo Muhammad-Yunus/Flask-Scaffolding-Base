@@ -1,10 +1,10 @@
 <!-- Form Field | Input Common -->
-{% macro render_field(field, group_class, readonly=False) %}
+{% macro render_field(field, group_class, field_class, readonly=False) %}
 <div class="form-group">
   {{ field.label(class="col-form-label") }}
   <!-- Render this if form field error -->
   {% if field.errors %}
-  {{ field(class="form-control is-invalid", readonly=readonly)|safe }}
+  {{ field(class="form-control is-invalid " + field_class, readonly=readonly)|safe }}
   <div class="invalid-feedback">
     {% for error in field.errors %}
     <span class="text-red">{{ error }}</span>
@@ -12,7 +12,7 @@
   </div>
   <!-- Render this if form field not error -->
   {% else %}
-  {{ field(class="form-control", readonly=readonly)|safe }}
+  {{ field(class="form-control " + field_class, readonly=readonly)|safe }}
   {% endif %}
 </div>
 {% endmacro %}
