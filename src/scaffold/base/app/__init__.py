@@ -17,12 +17,10 @@ mail = Mail()
 mail.init_app(app)
 
 # Late import models, forms & views
-from .models import User, Role
-from .views import *
-from .forms import *
+from app.models.user import User, Role
+from app.views.user import *
+from app.forms.user import *
 
 # Setup Flask-Security
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
-
-

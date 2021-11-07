@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="flask_scaffolding",
-    version="0.0.17",
+    version="0.0.26",
     author="Muhammad Yunus",
     author_email="yunusmuhammad007@gmail.com",
     description="Flask Scaffolding with buiiltin Authentication & Authorization",
@@ -29,9 +29,11 @@ setuptools.setup(
     include_package_data=True,
     package_data={
         'scaffold': ['base/instance/*.py', 
+                     'base/app/**/*.py',
                      'base/app/**/*.html', 
                      'base/app/**/**/*.html', 
-                     'base/app/**/**/*.css']
+                     'base/app/**/**/*.css',
+                     'stubs/*.jinja2']
         },
     python_requires=">=3.6"
 )

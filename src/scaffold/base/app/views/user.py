@@ -1,22 +1,23 @@
 from . import app
 from . import db
 
-from flask_security import login_required, roles_required, roles_accepted
+from . import login_required, roles_required, roles_accepted
 
-from flask import render_template
-from flask import url_for
-from flask import request
-from flask import flash
-from flask import redirect
-from flask import session
+from . import render_template
+from . import url_for
+from . import request
+from . import flash
+from . import redirect
+from . import session
 
-from sqlalchemy import or_
+from . import or_, and_, not_
 
 # import Forms
-from .forms import UserForm, RoleForm, ActionTable
+from . import UserForm, RoleForm
+from . import ActionTable
 
 # import Model
-from .models import User, Role
+from . import User, Role
 
 
 # Views

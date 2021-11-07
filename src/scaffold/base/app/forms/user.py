@@ -1,11 +1,8 @@
-from datetime import datetime
-from flask_wtf import FlaskForm
-from wtforms import BooleanField, StringField, TextAreaField, \
+from . import datetime
+from . import FlaskForm
+from . import BooleanField, StringField, TextAreaField, \
                     IntegerField, SelectMultipleField, PasswordField, \
                     validators, SubmitField, DateTimeField
-
-# import Model
-from .models import Role
 
 class UserForm(FlaskForm):
     id = IntegerField(default=0)
@@ -22,8 +19,3 @@ class RoleForm(FlaskForm):
     name = StringField('Name', [validators.Length(min=4, max=80), validators.DataRequired()])
     description = TextAreaField('Description', default='', render_kw={'rows':5})
     submit = SubmitField('Submit')
-
-class ActionTable(FlaskForm):
-    activate = SubmitField('Activate')
-    deactivate = SubmitField('Deactivate')
-    delete = SubmitField('Delete')
