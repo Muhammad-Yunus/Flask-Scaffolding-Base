@@ -1,5 +1,5 @@
 <!-- Form Field | Input Common -->
-{% macro render_field(field, group_class, field_class, readonly=False) %}
+{% macro render_field(field, group_class="", field_class="", readonly=False) %}
 <div class="form-group">
   {{ field.label(class="col-form-label") }}
   <!-- Render this if form field error -->
@@ -19,7 +19,7 @@
 
 
 <!-- Form Field | Check Box -->
-{% macro render_checkbox(field, group_class, disabled=False) %}
+{% macro render_checkbox(field, group_class="", disabled=False) %}
 <div class="form-group">
   <div class="form-check">
     <!-- Render this if form field error -->
@@ -40,7 +40,7 @@
 {% endmacro %}
 
 <!-- Form Field | Input Text Area -->
-{% macro render_field(field, group_class, readonly=False, rows=3) %}
+{% macro render_field_area(field, group_class="", readonly=False, rows=3) %}
 <div class="form-group">
   {{ field.label(class="col-form-label") }}
   <!-- Render this if form field error -->
@@ -59,7 +59,7 @@
 {% endmacro %}
 
 <!-- Form Field | Multiple Select -->
-{% macro render_multiple_select(field, group_class, disabled=False) %}
+{% macro render_multiple_select(field, group_class="", disabled=False) %}
 <div class="form-group">
   {{ field.label(class="col-form-label") }}
   <!-- Render this if form field error -->

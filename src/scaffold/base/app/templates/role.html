@@ -11,11 +11,11 @@
                 {% endif %}
 
                 <!-- User Form to Submit -->
-                {% from "_form_element_vertical.html" import render_field, render_checkbox, render_button %}
+                {% from "_form_element_vertical.html" import render_field, render_field_area, render_checkbox, render_button %}
                 <form method="POST" action="{{ url_for('role', id=form.id.data) }}">
                     {{ form.hidden_tag() }}
                     {{ render_field(form.name, readonly=True) }}
-                    {{ render_field(form.description) }}
+                    {{ render_field_area(form.description) }}
                     {{ render_button(form.submit, color="danger") }}
                 </form>
             </div>

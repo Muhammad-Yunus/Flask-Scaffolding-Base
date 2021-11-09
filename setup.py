@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="flask_scaffolding",
-    version="0.0.28",
+    version="0.0.29",
     author="Muhammad Yunus",
     author_email="yunusmuhammad007@gmail.com",
     description="Flask Scaffolding with buiiltin Authentication & Authorization",
